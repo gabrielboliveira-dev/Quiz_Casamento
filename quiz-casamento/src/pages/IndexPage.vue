@@ -7,7 +7,7 @@
         </div>
       </q-card-section>
 
-      <q-card-section v-if="!quizFinished">
+      <q-card-section v-if="!quizFinished && currentQuestion">
         <div class="text-h6 text-grey-8 q-mb-lg">{{ currentQuestion.question }}</div>
 
         <div v-if="!currentQuestion.type || currentQuestion.type === 'options'" class="options-grid">
@@ -204,7 +204,7 @@ const feedbackMessage = ref<string>('');
 const feedbackCorrect = ref<boolean>(false);
 const quizFinished = ref<boolean>(false);
 
-const currentQuestion = computed<Question>(() => {
+const currentQuestion = computed<Question | undefined>(() => {
   return questions.value[currentQuestionIndex.value];
 });
 
@@ -213,6 +213,11 @@ function selectOption(option: string): void {
 }
 
 function submitAnswer(): void {
+  if (!currentQuestion.value) {
+    console.error('currentQuestion é undefined ao tentar submeter a resposta.');
+    return;
+  }
+
   const q: Question = currentQuestion.value;
   let userAnswer: string = '';
 
@@ -389,9 +394,6 @@ $quiz-error: #e53935;
   background-color: $quiz-secondary-color;
   color: white;
   border: none;
-  //&:hover {
-    //background-color: darken($quiz-secondary-color, 5%);
-  //}
   &:active {
     transform: scale(0.98);
   }
@@ -402,7 +404,7 @@ $quiz-error: #e53935;
   color: white;
   border: none;
   &:hover {
-    background-color: darken(#FF8C00, 5%);
+    background-color: #F58500;
   }
   &:active {
     transform: scale(0.98);
