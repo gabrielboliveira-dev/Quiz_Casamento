@@ -34,11 +34,12 @@ export default defineConfig((/* ctx */) => {
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
-    build: {
-      target: {
-        browser: [ 'es2022', 'firefox115', 'chrome115', 'safari14' ],
-        node: 'node20'
-      },
+     build: {
+    publicPath: '/quiz-casamento/',
+    target: {
+      browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
+      node: 'node16',
+    },
 
       typescript: {
         strict: true,
@@ -46,7 +47,7 @@ export default defineConfig((/* ctx */) => {
         // extendTsConfig (tsConfig) {}
       },
 
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      vueRouterMode: 'history', // available values: 'hash', 'history'
       // vueRouterBase,
       // vueDevtools,
       // vueOptionsAPI: false,
