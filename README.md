@@ -6,11 +6,11 @@ Este é um projeto especial de Dia dos Namorados, um **quiz interativo** desenvo
 
 ## Funcionalidades
 
-* **Perguntas Personalizadas:** Questões sobre o nosso relacionamento, desde o primeiro encontro até hoje.
-* **Interface Bonita e Responsiva:** Desenvolvida com Quasar Framework, garantindo uma ótima experiência em qualquer dispositivo (desktop, tablet, celular).
-* **Feedback Instantâneo:** Mostra se a resposta está correta ou incorreta após cada pergunta.
-* **Surpresa Final:** Se a pontuação for alta o suficiente, um **vale-presente da Amazon** é revelado como prêmio!
-* **Reiniciar Quiz:** Opção para jogar novamente e reviver as memórias.
+- **Perguntas Personalizadas:** Questões sobre o nosso relacionamento, desde o primeiro encontro até hoje.
+- **Interface Bonita e Responsiva:** Desenvolvida com Quasar Framework, garantindo uma ótima experiência em qualquer dispositivo (desktop, tablet, celular).
+- **Feedback Instantâneo:** Mostra se a resposta está correta ou incorreta após cada pergunta.
+- **Surpresa Final:** Se a pontuação for alta o suficiente, um **vale-presente da Amazon** é revelado como prêmio!
+- **Reiniciar Quiz:** Opção para jogar novamente e reviver as memórias.
 
 ---
 
@@ -19,10 +19,12 @@ Este é um projeto especial de Dia dos Namorados, um **quiz interativo** desenvo
 Se você quiser explorar o código ou fazer suas próprias modificações, siga estes passos:
 
 1.  **Pré-requisitos:**
-    * [Node.js](https://nodejs.org/en/download/) (versão LTS recomendada)
-    * npm (vem com Node.js) ou Yarn
+
+    - [Node.js](https://nodejs.org/en/download/) (versão LTS recomendada)
+    - npm (vem com Node.js) ou Yarn
 
 2.  **Instale a CLI do Quasar globalmente (se ainda não tiver):**
+
     ```bash
     npm install -g @quasar/cli
     # ou
@@ -30,12 +32,14 @@ Se você quiser explorar o código ou fazer suas próprias modificações, siga 
     ```
 
 3.  **Clone o Repositório:**
+
     ```bash
     git clone [https://github.com/gabrielboliveira-dev/quiz-casamento.git](https://github.com/gabrielboliveira-dev/quiz-casamento.git)
     cd quiz-casamento
     ```
 
 4.  **Instale as Dependências:**
+
     ```bash
     npm install
     # ou
@@ -66,9 +70,11 @@ Este projeto está configurado para ser facilmente hospedado no GitHub Pages.
     ```
 
 2.  **Gere a Build de Produção:**
+
     ```bash
     quasar build
     ```
+
     Isso criará a pasta `dist/spa` com os arquivos otimizados.
 
 3.  **Deploy para GitHub Pages:**
@@ -90,10 +96,10 @@ Este projeto está configurado para ser facilmente hospedado no GitHub Pages.
 
 ## Personalização
 
-* **Perguntas:** Edite o array `questions` em `src/pages/IndexPage.vue` com as suas próprias perguntas e respostas.
-* **Código do Vale-Presente:** **Não se esqueça de inserir o código real do vale-presente da Amazon** na variável `amazonGiftCode` em `src/pages/IndexPage.vue` antes do deploy!
-* **Estilos:** Altere as cores, fontes e outros estilos no bloco `<style lang="scss">` de `src/pages/IndexPage.vue`.
-* **Ícone do Livro:** Substitua `src/assets/book_icon.png` por um ícone de sua preferência.
+- **Perguntas:** Edite o array `questions` em `src/pages/IndexPage.vue` com as suas próprias perguntas e respostas.
+- **Código do Vale-Presente:** **Não se esqueça de inserir o código real do vale-presente da Amazon** na variável `amazonGiftCode` em `src/pages/IndexPage.vue` antes do deploy!
+- **Estilos:** Altere as cores, fontes e outros estilos no bloco `<style lang="scss">` de `src/pages/IndexPage.vue`.
+- **Ícone do Livro:** Substitua `src/assets/book_icon.png` por um ícone de sua preferência.
 
 ---
 
