@@ -63,7 +63,7 @@
           Você acertou {{ correctAnswersCount }} de {{ questions.length }} perguntas!
         </div>
 
-        <div v-if="correctAnswersCount >= 7" class="vale-livro-card neomorphic-card-prize q-mt-lg">
+        <div v-if="correctAnswersCount >= 10" class="vale-livro-card neomorphic-card-prize q-mt-lg">
           <q-icon name="book" size="64px" color="teal-6" class="q-mb-md" />
           <div class="text-h5 text-primary dancing-script">Parabéns, Meu Amor!</div>
           <div class="text-subtitle1 text-grey-8">
@@ -80,7 +80,7 @@
             flat
           />
           <div class="text-caption text-grey-6 q-mt-sm">
-            Válido para compras na Amazon.com.br. Valor: R$ 50,00.
+            Válido para compras na Amazon.com.br. Valor: R$ 100,00.
             <br>
             Cuidado: O código não aparecerá novamente!
           </div>
@@ -101,98 +101,98 @@
 </template>
 
 <script setup lang="ts">
-// (O script setup permanece o mesmo, sem alterações significativas)
-// Importações e lógica como antes
+
 import { ref, computed } from 'vue';
+import type { Ref } from 'vue';
 import { useQuasar } from 'quasar';
 
 const $q = useQuasar();
 
-// Interface para tipar as perguntas
+
 interface Question {
   question: string;
-  options?: string[]; // '?' indica que é opcional
+  options?: string[]; 
   answer: string;
-  type?: 'text' | 'options'; // 'text' para input de texto, 'options' para múltipla escolha (padrão)
+  type?: 'text' | 'options'; 
 }
 
-const amazonGiftCode = ref<string>("ABCD-EFGHIJ-KLMNOP"); // <-- **ADICIONE SEU CÓDIGO REAL AQUI**
+const amazonGiftCode = ref<string>("IREI-PASSAR-PIX");
 
 const questions: Ref<Question[]> = ref([
   {
-    question: "Qual foi o filme que assistimos no nosso primeiro encontro?",
-    options: ["Vingadores: Ultimato", "La La Land", "Como Se Fosse a Primeira Vez", "O Poderoso Chefão"],
-    answer: "Como Se Fosse a Primeira Vez"
+    question: "Qual foi a primeira saga de filmes que assistimos ?",
+    options: ["Marvel", "Crepúsculo", "Harry Potter", "Disney"],
+    answer: "Crepúsculo"
   },
   {
     question: "Em que local tivemos nosso primeiro beijo?",
-    options: ["Na porta da sua casa", "No cinema", "Na festa do João", "No Parque da Cidade"],
-    answer: "Na porta da sua casa"
+    options: ["Na porta da sua casa", "No cinema", "Na festa do João", "Na minha casa"],
+    answer: "Na minha casa"
   },
   {
     question: "Qual é a música que mais nos lembra o início do nosso relacionamento?",
-    options: ["Photograph - Ed Sheeran", "Perfect - Ed Sheeran", "Thinking Out Loud - Ed Sheeran", "All of Me - John Legend"],
-    answer: "Photograph - Ed Sheeran"
+    options: ["Photograph - Ed Sheeran", "All of Me - John Legend", "Thinking Out Loud - Ed Sheeran", "Nós dois - Pedro Valença"],
+    answer: "Nós dois - Pedro Valença"
   },
   {
-    question: "Qual foi a primeira viagem que fizemos juntos?",
-    options: ["Porto de Galinhas", "Serra Talhada", "Recife", "Fernando de Noronha"],
-    answer: "Porto de Galinhas" // Ajuste para a sua realidade
+    question: "Qual será nossa primeira viagem internacionalque faremos juntos?",
+    options: ["Roma", "Paris", "Lisboa", "Londres"],
+    answer: "Lisboa"
   },
   {
     question: "Qual é o meu apelido carinhoso para você?",
     type: "text",
-    answer: "Meu Amorzinho" // Adapte para o apelido real!
+    answer: "Amor"
   },
   {
-    question: "Qual a comida que mais me agrada quando você prepara?",
-    options: ["Pizza caseira", "Lasanha", "Um bom churrasco", "Salmão grelhado"],
-    answer: "Lasanha" // Ajuste para a sua realidade
+    question: "Qual a primeira comida que mais me agradou quando você preparou?",
+    options: ["Pizza caseira", "Lasanha", "Tapioca", "Misto"],
+    answer: "Tapioca" 
   },
   {
-    question: "Em qual ocasião você me deu o presente mais inusitado (e divertido)?",
-    options: ["No nosso aniversário de namoro", "No meu aniversário", "No Natal", "Sem data especial, só por carinho"],
-    answer: "Sem data especial, só por carinho" // Adapte!
+    question: "Em qual lugar mais iamos comer no namoro/noivado?",
+    options: ["Klebyo Pizzaria", "Serra China", "Tempero Sertanejo", "Caquinha"],
+    answer: "Klebyo Pizzaria"
   },
   {
-    question: "Qual é o seu sonho de viagem que ainda não realizamos juntos?",
-    options: ["Paris, França", "Tóquio, Japão", "Fernando de Noronha, Brasil", "Cruzeiro pelo Caribe"],
-    answer: "Fernando de Noronha, Brasil" // Ajuste para a sua realidade
+    question: "Qual o seu sonho de viagem de lua de mel? OBS: Iremos realizar!",
+    options: ["São Caetano", "Santa Cruz da Baixa Verde", "Praia do Pipa", "Cruzeiro pelo Caribe"],
+    answer: "Praia do Pipa"
   },
   {
-    question: "Qual a minha mania mais engraçada, segundo você?",
+    question: "Qual a sua mania mais engraçada, segundo eu?",
     type: "text",
-    answer: "Roncar baixinho" // Adapte para a mania real!
+    answer: "Roncar baixinho"
   },
   {
-    question: "Qual foi a maior surpresa que você já me preparou?",
-    options: ["A festa de aniversário surpresa", "Um jantar romântico inesperado", "Uma viagem de fim de semana de última hora", "Um bilhete de amor escondido"],
-    answer: "A festa de aniversário surpresa" // Adapte!
+    question: "Onde foi nosso pedio de noivado?",
+    options: ["Klebyo Pizzaria", "Serra China", "Tempero Sertanejo", "Caquinha"],
+    answer: "Tempero Sertanejo" 
   },
   {
     question: "Qual é o meu hobby favorito que você sempre me incentiva a praticar?",
     type: "text",
-    answer: "Cozinhar" // Adapte!
+    answer: "Execitar"
   },
   {
     question: "Se fôssemos um super-herói/heroína juntos, qual seria nosso superpoder?",
     options: ["Teletransporte para viajar instantaneamente", "Voar pelo mundo de mãos dadas", "Controlar o tempo para reviver momentos especiais", "Super força para carregar todas as compras"],
-    answer: "Teletransporte para viajar instantaneamente" // Adapte!
+    answer: "Teletransporte para viajar instantaneamente" 
   },
   {
     question: "Qual foi o momento em que você sentiu que 'era para sempre' comigo?",
     type: "text",
-    answer: "Quando passamos a primeira noite juntos conversando sobre tudo" // Adapte!
+    answer: "Quando passamos a primeira noite juntos conversando sobre tudo" 
   },
   {
-    question: "Qual é a sua flor favorita que eu sempre tento te dar?",
-    options: ["Rosas vermelhas", "Girassóis", "Lírios", "Orquídeas"],
-    answer: "Rosas vermelhas" // Adapte!
+    question: "Qual é a flor que gostaria de receber?",
+    options: ["Rosas vermelhas", "Girassóis", "Lírios", "Copo-de-leite"],
+    answer: "Copo-de-leite" 
   },
   {
     question: "Qual é a atividade mais simples que fazemos juntos e que você mais ama?",
-    options: ["Assistir a um filme no sofá", "Cozinhar juntos no fim de semana", "Caminhar de mãos dadas no parque", "Fazer um piquenique"],
-    answer: "Assistir a um filme no sofá" // Adapte!
+    options: ["Assistir a um filme no sofá", "Cozinhar juntos no fim de semana", "Caminhar de mãos", "Cozinhar juntos"],
+    answer: "Assistir a um filme no sofá" 
   }
 ]);
 
@@ -243,17 +243,17 @@ function submitAnswer(): void {
     feedbackCorrect.value = false;
   }
 
-  // Desabilita botões/inputs enquanto mostra o feedback
+  
   setTimeout(() => {
-    feedbackMessage.value = ''; // Limpa o feedback
-    selectedOption.value = null; // Reseta a opção selecionada
-    textAnswer.value = ''; // Limpa a resposta de texto
+    feedbackMessage.value = ''; 
+    selectedOption.value = null; 
+    textAnswer.value = ''; 
 
     currentQuestionIndex.value++;
     if (currentQuestionIndex.value >= questions.value.length) {
       quizFinished.value = true;
     }
-  }, 2000); // 2 segundos para dar tempo de ler o feedback
+  }, 2000);
 }
 
 function copyCode(): void {
@@ -290,36 +290,25 @@ function resetQuiz(): void {
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
 
-// --- Variáveis de Neomorfismo ---
-$light-shadow: -4px -4px 8px rgba(255, 255, 255, 0.7);
-$dark-shadow: 4px 4px 8px rgba(0, 0, 0, 0.15);
-$inset-light-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.7);
-$inset-dark-shadow: inset -4px -4px 8px rgba(0, 0, 0, 0.15);
-
-// Cores base para neomorfismo (tons suaves de rosa e branco)
-$neumo-bg: #f8f0f4; // Rosa muito claro
-$neumo-lighter: #ffffff; // Branco
-$neumo-darker: #e8d8e0; // Rosa um pouco mais escuro
-
-// Paleta de cores do Quiz (ajustadas para harmonizar com o neomorfismo)
-$quiz-primary-color: #c2185b; // Rosa mais vibrante para títulos
-$quiz-secondary-color: #e91e63; // Rosa secundário
-$quiz-accent-color: #fce4ec; // Rosa claro (para gradiente)
-$quiz-text-dark: #212121; // Cinza escuro
-$quiz-text-light: #757575; // Cinza claro
+$glass-bg: rgba(255, 255, 255, 0.15);
+$glass-border: rgba(255, 255, 255, 0.5);
+$quiz-primary-color: #c2185b;
+$quiz-secondary-color: #e91e63;
+$quiz-accent-color: #fce4ec;
+$quiz-text-dark: #212121;
+$quiz-text-light: #757575;
 $quiz-success: #43a047;
 $quiz-error: #e53935;
-$quiz-brown: #795548; // Marrom suave
 
 .quiz-page {
-  background: linear-gradient(to bottom right, $quiz-accent-color, $neumo-bg); // Suave gradiente rosa
+  background: linear-gradient(to bottom right, $quiz-accent-color, white);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   overflow: hidden;
-  font-family: 'Montserrat', sans-serif; // Fonte sem serifa para o corpo
+  font-family: 'Montserrat', sans-serif;
 }
 
 .quiz-page::before {
@@ -327,8 +316,8 @@ $quiz-brown: #795548; // Marrom suave
   position: absolute;
   top: -20px;
   left: -20px;
-  font-size: 150px;
-  color: rgba(255, 105, 180, 0.05); // Rosa mais forte e mais transparente
+  font-size: 200px;
+  color: rgba(255, 105, 180, 0.05);
   transform: rotate(-25deg);
   z-index: 0;
 }
@@ -338,139 +327,138 @@ $quiz-brown: #795548; // Marrom suave
   width: 90%;
   padding: 30px;
   border-radius: 20px;
-  background-color: $neumo-bg;
-  box-shadow: $light-shadow, $dark-shadow; // Neomorfismo base
+  background: $glass-bg;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  border: 1px solid $glass-border;
   text-align: center;
   z-index: 1;
-  transition: all 0.3s ease; // Transições suaves
+  transition: all 0.3s ease;
 }
 
 .neomorphic-card {
-  background-color: $neumo-bg;
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  backdrop-filter: blur(30px);
   border-radius: 20px;
-  box-shadow: $light-shadow, $dark-shadow;
   transition: all 0.3s ease;
 }
 
 .dancing-script {
   font-family: 'Dancing Script', cursive;
   font-weight: 700;
-  color: $quiz-primary-color; // Cor rosa para títulos
+  color: $quiz-primary-color;
 }
 
-.text-primary {
-  color: $quiz-primary-color !important;
-}
-
-.text-pink-4 {
-  color: $quiz-secondary-color !important;
-}
-
-.text-grey-8 {
-  color: $quiz-text-light !important;
-}
+.text-primary { color: $quiz-primary-color !important; }
+.text-pink-4 { color: $quiz-secondary-color !important; }
+.text-grey-8 { color: $quiz-text-light !important; }
 
 .options-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px; // Aumentar o gap para mais "respiro"
+  gap: 20px;
   margin-top: 25px;
 }
 
 .neomorphic-btn {
-  background-color: $neumo-bg;
-  border-radius: 15px; // Um pouco menos arredondado que o card
-  box-shadow: $light-shadow, $dark-shadow;
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
   transition: all 0.3s ease;
-  color: $quiz-text-dark; // Cor do texto base
+  color: $quiz-text-dark;
   font-weight: 500;
   padding: 15px 25px;
 
   &:hover {
-    box-shadow: $dark-shadow, $light-shadow; // Inverte as sombras para "pressionar"
-    transform: translateY(1px); // Pequeno movimento para indicar clique
-    color: $quiz-primary-color; // Ação no hover
+    transform: scale(1.02);
+    color: $quiz-primary-color;
+    background: rgba(255, 255, 255, 0.25);
   }
 
   &.selected-option {
-    background-color: $neumo-lighter; // Um tom ligeiramente diferente para o selecionado
-    box-shadow: $inset-dark-shadow, $inset-light-shadow; // Sombra interna para "pressionado"
-    color: $quiz-secondary-color; // Cor destacada para selecionado
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: $quiz-secondary-color;
     font-weight: 600;
   }
 }
 
 .neomorphic-btn-primary {
-  background-color: $quiz-secondary-color; // Cor de destaque para o botão principal
+  background-color: $quiz-secondary-color;
   color: white;
-  box-shadow: $dark-shadow, $light-shadow; // Sombra para parecer elevado
-  &:hover {
-    background-color: darken($quiz-secondary-color, 5%);
-    box-shadow: $inset-dark-shadow, $inset-light-shadow; // Sombra interna para "pressionar"
-  }
+  border: none;
+  //&:hover {
+    //background-color: darken($quiz-secondary-color, 5%);
+  //}
   &:active {
-    box-shadow: $inset-dark-shadow, $inset-light-shadow;
-    transform: translateY(1px);
+    transform: scale(0.98);
   }
 }
 
 .neomorphic-btn-copy {
-  background-color: #FF8C00; // Laranja para copiar
+  background-color: #FF8C00;
   color: white;
-  box-shadow: $dark-shadow, $light-shadow;
+  border: none;
   &:hover {
     background-color: darken(#FF8C00, 5%);
-    box-shadow: $inset-dark-shadow, $inset-light-shadow;
   }
   &:active {
-    box-shadow: $inset-dark-shadow, $inset-light-shadow;
-    transform: translateY(1px);
+    transform: scale(0.98);
   }
 }
 
 .neomorphic-input {
-  background-color: $neumo-bg !important;
-  border-radius: 15px;
-  box-shadow: $inset-dark-shadow, $inset-light-shadow; // Sombra interna para o input
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
   font-family: 'Montserrat', sans-serif;
-  padding: 10px 15px; // Ajuste o padding para neomorfismo
+  padding: 10px 15px;
 
   .q-field__control {
-    background: transparent !important; // Garante que o fundo seja o do container
-    box-shadow: none !important;
-    border-radius: 15px;
+    background: transparent !important;
+    border-radius: 20px;
     color: $quiz-text-dark;
   }
+
   .q-field__label {
     color: $quiz-text-light;
   }
 }
 
+.neomorphic-banner-success,
+.neomorphic-banner-error {
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 15px;
+}
+
 .neomorphic-banner-success {
   background-color: rgba($quiz-success, 0.2) !important;
   color: $quiz-success !important;
-  box-shadow: $inset-light-shadow, $inset-dark-shadow;
-  border-radius: 15px;
 }
 
 .neomorphic-banner-error {
   background-color: rgba($quiz-error, 0.2) !important;
   color: $quiz-error !important;
-  box-shadow: $inset-light-shadow, $inset-dark-shadow;
-  border-radius: 15px;
 }
 
 .result-section {
-  background-color: $neumo-bg;
+  background: $glass-bg;
+  border: 1px solid $glass-border;
+  backdrop-filter: blur(10px);
   border-radius: 20px;
-  box-shadow: $light-shadow, $dark-shadow; // Continua o estilo do card
   padding: 30px;
 }
 
 .vale-livro-card {
-  background-color: $neumo-lighter; // Um tom um pouco mais claro para o card de prêmio
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 20px;
-  box-shadow: $light-shadow, $dark-shadow;
+  backdrop-filter: blur(8px);
   padding: 25px;
   margin-top: 30px;
   animation: pulse 1.5s infinite alternate;
@@ -482,21 +470,25 @@ $quiz-brown: #795548; // Marrom suave
   font-weight: bold;
   letter-spacing: 2px;
   user-select: all;
-  background-color: $neumo-darker; // Um tom mais escuro para o background do código
-  box-shadow: $inset-dark-shadow, $inset-light-shadow; // Sombra interna
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
   padding: 10px 20px;
   border-radius: 8px;
-  display: inline-block;
   color: $quiz-text-dark;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); box-shadow: $light-shadow, $dark-shadow; }
-    100% { transform: scale(1.02); box-shadow: $light-shadow, $dark-shadow,
-             0 0 15px rgba($quiz-secondary-color, 0.3); } // Adiciona um brilho sutil
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px rgba($quiz-secondary-color, 0.3);
+  }
 }
 
-/* Responsividade (manter, mas pode ajustar margens/paddings) */
 @media (max-width: 600px) {
   .quiz-container {
     padding: 20px;
@@ -516,5 +508,4 @@ $quiz-brown: #795548; // Marrom suave
     padding: 8px 15px;
   }
 }
-// --- TERMINA AQUI O CÓDIGO QUE VOCÊ FORNECEU ---
 </style>
